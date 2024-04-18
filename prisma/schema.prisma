@@ -1,0 +1,55 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("POSTGRES_URL")
+}
+
+model User {
+    id        Int       @id @default(autoincrement())
+    enrollNo  String    @unique
+    name      String?
+    password  String
+    projectId Int?
+    project   Projects? @relation(fields: [projectId], references: [id])
+}
+
+model Admins {
+    id       Int        @id @default(autoincrement())
+    email    String     @unique
+    name     String?
+    password String
+    projects Projects[]
+}
+
+enum Status {
+    approved
+    pending
+    rejected
+    completed
+}
+
+model Projects {
+    id              Int     @id @default(autoincrement())
+    name            String
+    status          Status  @default(pending)
+    description     String?
+    leaderId        Int
+    aeiouUrl        String?
+    empathyUrl      String?
+    pdcUrl          String?
+    mindMapUrl      String?
+    prototypeUrl    String?
+    reportUrl       String?
+    aeiouStatus     Status  @default(pending)
+    empathyStatus   Status  @default(pending)
+    pdcStatus       Status  @default(pending)
+    mindMapStatus   Status  @default(pending)
+    prototypeStatus Status  @default(pending)
+    reportStatus    Status  @default(pending)
+    members         User[]
+    adminsId        Int?
+    admins          Admins? @relation(fields: [adminsId], references: [id])
+}
