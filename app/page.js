@@ -31,6 +31,7 @@ export default function Home() {
         toast.error(res.error);
       }
       if (res.ok) {
+        console.log("Logged in")
         window.location.replace("/user/home");
       }
     } catch (error) {

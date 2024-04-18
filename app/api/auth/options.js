@@ -80,7 +80,6 @@ export const authOptions = {
                     token.accessToken = account.access_token;
                 }
             }
-            
             return token;
         },
         async session({ session, token, profile }) {
