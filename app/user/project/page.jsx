@@ -11,8 +11,8 @@ export default function Page() {
 	const renderProject = () => {
 		if (project) {
 			return (
-				<div className="flex flex-col mx-8 my-5 rounded-3xl p-4 w-full">
-					<p className="text-3xl my-4 font-thin font-sans flex items-center">
+				<div className=" relative flex flex-col md:mx-8 md:my-5 rounded-3xl p-4 w-full overflow-x-auto">
+					<p className="md:text-2xl lg:text-3xl text-xl my-4 font-thin font-sans flex items-center">
 						{project.name}&nbsp;&nbsp;
 						<span
 							className={`${
@@ -26,7 +26,7 @@ export default function Page() {
 							{project.status} {project.status === "pending" ? " approval" : "✅"}
 						</span>
 					</p>
-					<p className="text-xl italic font-thin font-sans text-gray-600">
+					<p className="md:text-xl text-sm italic font-thin font-sans text-gray-600">
 						{project.description}
 					</p>
 					{project.status === "approved" ? (
@@ -119,29 +119,29 @@ export default function Page() {
 					) : (
 						<></>
 					)}
-					<p className="text-2xl font-thin font-sans my-4">Members :-</p>
-					<table className="table-auto lg:w-[70%] md:w-[80%] w-[90%] mx-auto">
+					<p className="lg:text-2xl md:text-xl text-sm font-thin font-sans my-4">Members :-</p>
+					<table className="table-auto lg:w-[70%] md:w-[80%] w-full mx-auto">
 						<thead>
 							<tr>
-								<th className="px-4 py-2">Name</th>
-								<th className="px-4 py-2">Enrollment No.</th>
-								<th className="px-4 py-2">Email</th>
-								<th className="px-4 py-2">Mobile</th>
+								<th className="px-4 py-2 md:text-md text-sm font-thin">Name</th>
+								<th className="px-4 py-2 md:text-md text-sm font-thin">Enrollment No.</th>
+								<th className="px-4 py-2 md:text-md text-sm font-thin">Email</th>
+								<th className="px-4 py-2 md:text-md text-sm font-thin">Mobile</th>
 							</tr>
 						</thead>
 						<tbody>
 							{members.map((member) => (
 								<tr key={member.id}>
-									<td className="border px-4 py-2">
+									<td className="border px-4 py-2 md:text-md text-sm font-thin">
 										{member.name}
 									</td>
-									<td className="border px-4 py-2">
+									<td className="border px-4 py-2 md:text-md text-sm font-thin">
 										{member.enrollNo}
 									</td>
-									<td className="border px-4 py-2">
+									<td className="border px-4 py-2 md:text-md text-sm font-thin">
 										sample@gmail.com
 									</td>
-									<td className="border px-4 py-2">
+									<td className="border px-4 py-2 md:text-md text-sm font-thin">
 										+918794632764
 									</td>
 								</tr>
@@ -159,7 +159,7 @@ export default function Page() {
 			<Navbar />
 			<div className="flex lg:w-[70%] md:w-[80%] w-[90%] mx-auto my-4 justify-center items-start h-max border border-gray-200">
 				{session?.user.project !== null ? (
-					<div>{renderProject()}</div>
+					<>{renderProject()}</>
 				) : (
 					<div className="flex w-[70%] mx-auto justify-around items-center flex-col">
 						<p className="text-xl text-gray-600 font-thin my-8">

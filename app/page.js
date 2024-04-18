@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client"
 import { signIn, useSession } from "next-auth/react";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
@@ -86,8 +87,11 @@ export default function Home() {
   }
   return (
     <>
+      <div className="w-full flex items-center h-[20vh] justify-center ps-8">
+        <Image src={'/assets/gtu.png'} alt="logo" width={120} height={120} className="lg:w-[120px] md:w-[90px] w-[70px]" />
+      </div>
       {loginPage ? (
-				<div className="lg:w-[40%] md:w-[60%] w-[96%] absolute top-[15vh] md:left-[30%] left-[2%] flex flex-col items-center">
+				<div className="lg:w-[40%] md:w-[60%] w-[96%] left-[2%] md:left-[20%] lg:left-[30%] absolute top-[20vh] flex flex-col items-center justify-center">
 					<form
 						className="flex md:w-[50%] w-[90%] flex-col mx-auto my-4"
 						onSubmit={handleLogin}
@@ -107,21 +111,29 @@ export default function Home() {
 						/>
 						<button
 							type="submit"
-							className="w-[20%] mt-2 mx-auto border border-transparent bg-black text-white hover:bg-white hover:text-black hover:border hover:border-black py-[5px] text-[12px] rounded-[1.25rem] transition"
+							className="w-[20%] mt-2 mx-auto border border-transparent bg-black text-white hover:bg-white hover:text-black hover:border hover:border-black py-[5px] text-[12px] rounded-[0.8rem] transition"
 						>
 							Login
 						</button>
 					</form>
 					<div className="md:w-[50%] w-[90%] my-2 h-[0.5px] bg-gray-300"></div>
-					<button
-						className="w-[40%] border border-transparent bg-white text-black hover:bg-black hover:text-white hover:border hover:border-black py-[5px] my-4 text-[12px] transition"
-						onClick={() => setLoginPage(false)}
-					>
-						Don't have an account? Signup
-					</button>
+          <div className="w-full flex justify-center">
+            <button
+              className="w-[40%] border border-transparent bg-white text-black hover:bg-black hover:text-white hover:border hover:border-black py-[5px] my-4 text-[12px] transition"
+              onClick={() => setLoginPage(false)}
+            >
+              Forgot Password?
+            </button>
+            <button
+              className="w-[40%] border border-transparent bg-white text-black hover:bg-black hover:text-white hover:border hover:border-black py-[5px] my-4 text-[12px] transition"
+              onClick={() => setLoginPage(false)}
+            >
+              Don't have an account? Signup
+            </button>
+          </div>
 				</div>
 			) : (
-				<div className="md:w-[40%] w-[90%] absolute top-[15vh] md:left-[30%] left-[5%] flex flex-col items-center">
+				<div className="md:w-[40%] w-[90%] absolute top-[20vh] md:left-[30%] left-[5%] flex flex-col items-center">
 					<form
 						className="flex md:w-[50%] w-[90%] flex-col mx-auto my-4"
 						onSubmit={handleSubmit}
@@ -151,11 +163,12 @@ export default function Home() {
 						/>
 						<button
 							type="submit"
-							className="w-[20%] mt-2 mx-auto border border-transparent bg-black text-white hover:text-black hover:bg-white hover:border hover:border-black py-[5px] text-[12px] rounded-[1.25rem] transition"
+							className="w-[20%] mt-2 mx-auto border border-transparent bg-black text-white hover:text-black hover:bg-white hover:border hover:border-black py-[5px] text-[12px] rounded-[0.8rem] transition"
 						>
 							Sign-up
 						</button>
 					</form>
+          
 					<div className="w-[50%] my-2 h-[0.5px] bg-gray-300"></div>
 					<button
 						className="w-[40%] border border-transparent hover:bg-black hover:text-white hover:border hover:border-black py-[5px] my-4 text-[12px] transition"

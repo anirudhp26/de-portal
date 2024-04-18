@@ -65,7 +65,7 @@ export default function Page() {
 		<>
 			<Navbar />
 			<div className="flex flex-col lg:w-[70%] md:w-[80%] w-[90%] mx-auto my-4 justify-center items-start h-max">
-				<form className="flex flex-col w-full mx-8 my-5 p-4 justify-between" onSubmit={handleSubmit}>
+				<form className="flex flex-col w-full my-5 p-4 justify-between" onSubmit={handleSubmit}>
 					<p className="text-2xl font-thin font-sans my-2">
 						# Upload Project
 					</p>
@@ -110,6 +110,7 @@ export default function Page() {
 						className="my-4 p-2 border"
 						placeholder="Select Your Team Members.."
 						options={users}
+						isOptionDisabled={() => projectData?.members?.length >= 3}
 						onChange={(selectedOption) => {
 							console.log(selectedOption);
 							setProjectData({ ...projectData, members: selectedOption.map((option) => option.value) });
@@ -118,7 +119,7 @@ export default function Page() {
 				<div className="bg-gray-300 w-full h-[1px] my-4"></div>
 					<button
 						type="submit"
-						className="w-[20%] mt-2 border border-transparent bg-black text-white hover:bg-white hover:text-black hover:border hover:border-black py-2 px-4 text-[15px] rounded-lg transition font-thin font-sans"
+						className="w-[20%] mt-2 border border-transparent bg-black text-white hover:bg-white hover:text-black hover:border hover:border-black py-2 px-4 flex justify-center text-sm rounded-lg transition font-thin font-sans"
 					>
 						Submit
 					</button>
