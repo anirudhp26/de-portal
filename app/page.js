@@ -7,17 +7,15 @@ import { toast } from "sonner";
 export default function Home() {
   const router = useRouter();
   const [loginPage, setLoginPage] = useState(true);
-  const { data } = useSession();
+  const { data, status } = useSession();
 
   useEffect(() => {
     if (data) {
-      if (data.type === "student") {
-        router.push("/user/home");
-      } else if (data.type === "admin") {
-        router.push("/admin/home");
+      if (status === "authenticated") {
+        router.replace("/user/home");
       }
     }
-  });
+  }, [status, router, data]);
 
   const handleLogin = async (e) => {
     e.preventDefault();
