@@ -57,7 +57,9 @@ export default function Navbar() {
                 >
                     <p className="font-sans font-thin text-sm flex lg:flex-row flex-col justify-center items-center">Welcome, {session?.user?.name}&nbsp;&nbsp;&nbsp;<button
                         className="px-3 py-1 text-[13px] rounded-lg border-gray-500 border bg-white text-black hover:text-white hover:bg-red-600 transition-all hover:border hover:border-white"
-                        onClick={() => signOut()}
+                        onClick={() => signOut({
+                            redirect: false,
+                        })}
                     >
                         Logout
                     </button></p>
