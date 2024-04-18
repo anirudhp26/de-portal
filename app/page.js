@@ -27,11 +27,13 @@ export default function Home() {
         enroll: e.target[0].value,
         password: e.target[1].value,
         login_type: "student",
-        callbackUrl: "/user/home",
       });
       if (res?.error) {
         console.log(res.error);
         toast.error(res.error);
+      }
+      if (res.ok) {
+        window.location.replace("/user/home");
       }
     } catch (error) {
       console.log(error);
