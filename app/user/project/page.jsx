@@ -154,7 +154,6 @@ export default function Page() {
 		<>
 			<Navbar />
 			<div className="flex lg:w-[70%] md:w-[80%] w-[90%] mx-auto my-4 justify-center items-start h-max border border-gray-200">
-				{renderProject()}
 				{session?.user.project !== null ? (
 					<div>{renderProject}</div>
 				) : (
