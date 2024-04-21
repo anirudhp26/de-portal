@@ -24,7 +24,7 @@ export default function Navbar() {
 			</div>
 			<div className="lg:w-[30%] md:w-[40%] flex justify-between">
 				<p
-					className="text-xl hidden md:flex font-sans font-thin my-2 text-gray-400 cursor-pointer hover:text-black"
+					className="text-xl hidden md:flex font-sans font-thin my-2 text-gray-500 cursor-pointer hover:text-black"
 					onClick={() => {
 						router.push("/user/home");
 					}}
@@ -32,7 +32,7 @@ export default function Navbar() {
 					Home
 				</p>
 				<p
-					className="text-xl hidden md:flex font-sans font-thin my-2 text-gray-400 cursor-pointer hover:text-black"
+					className="text-xl hidden md:flex font-sans font-thin my-2 text-gray-500 cursor-pointer hover:text-black"
 					onClick={() => {
 						router.push("/user/project");
 					}}
@@ -40,7 +40,7 @@ export default function Navbar() {
 					Project
 				</p>
 				<p
-					className="text-xl hidden md:flex font-sans font-thin my-2 text-gray-400 cursor-pointer hover:text-black"
+					className="text-xl hidden md:flex font-sans font-thin my-2 text-gray-500 cursor-pointer hover:text-black"
 					onClick={() => {
 						router.push("/user/upload");
 					}}
@@ -69,7 +69,7 @@ export default function Navbar() {
 						Welcome, {session?.user?.name}&nbsp;&nbsp;&nbsp;
 					</p>
 					<p
-						className="flex w-full md:hidden text-sm font-sans p-2 font-thin my-2 text-gray-400 cursor-pointer hover:text-black"
+						className="flex w-full md:hidden text-sm font-sans p-2 font-thin my-2 text-gray-500 cursor-pointer hover:text-black"
 						onClick={() => {
 							router.push("/user/home");
 						}}
@@ -77,7 +77,7 @@ export default function Navbar() {
 						Home
 					</p>
 					<p
-						className="flex w-full md:hidden text-sm font-sans p-2 font-thin my-2 text-gray-400 cursor-pointer hover:text-black"
+						className="flex w-full md:hidden text-sm font-sans p-2 font-thin my-2 text-gray-500 cursor-pointer hover:text-black"
 						onClick={() => {
 							router.push("/user/project");
 						}}
@@ -85,7 +85,7 @@ export default function Navbar() {
 						Project
 					</p>
 					<p
-						className="flex w-full md:hidden text-sm font-sans p-2 font-thin my-2 text-gray-400 cursor-pointer hover:text-black"
+						className="flex w-full md:hidden text-sm font-sans p-2 font-thin my-2 text-gray-500 cursor-pointer hover:text-black"
 						onClick={() => {
 							router.push("/user/upload");
 						}}

@@ -28,16 +28,16 @@ export default function Page() {
 							&nbsp;Personal Information
 						</p>
 						<div>
-							<p className="md:text-xl text-sm font-sans font-thin my-2 text-gray-400">
+							<p className="md:text-xl text-sm font-sans font-thin my-2 text-gray-500">
 								name: {session?.user?.name}
 							</p>
-							<p className="md:text-xl text-sm font-sans font-thin my-2 text-gray-400">
+							<p className="md:text-xl text-sm font-sans font-thin my-2 text-gray-500">
 								enrollment No. : {session?.user?.enrollNo}
 							</p>
-							<p className="md:text-xl text-sm font-sans font-thin my-2 text-gray-400">
+							<p className="md:text-xl text-sm font-sans font-thin my-2 text-gray-500">
 								email: studentexample@gmail.com
 							</p>
-							<p className="md:text-xl text-sm font-sans font-thin my-2 text-gray-400">
+							<p className="md:text-xl text-sm font-sans font-thin my-2 text-gray-500">
 								phone: +97239472924
 							</p>
 						</div>
